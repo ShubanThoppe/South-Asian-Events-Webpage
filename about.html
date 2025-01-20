@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - South Asian Events</title>
+    <link rel="stylesheet" href="about.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-container">
+        <a href="home.html" class="logo" title="Go to Home">
+            <img src="logo.png" alt="Company Logo">
+            <span>South Asian Events</span>
+        </a>
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <h1>About Us</h1>
+        <p>Celebrating the vibrant heritage, culture, and diversity of South Asia.</p>
+    </section>
+
+    <section class="mission-vision">
+        <div class="content">
+            <h2>Our Mission</h2>
+            <p>To create a platform that bridges communities through the celebration of South Asian culture, arts, and
+                traditions.</p>
+        </div>
+        <div class="content">
+            <h2>Our Vision</h2>
+            <p>To be the leading hub for South Asian events, connecting people globally through unforgettable cultural
+                experiences.</p>
+        </div>
+    </section>
+
+    <section class="our-values">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-heart"></i>
+                <h3>Community</h3>
+                <p>We believe in fostering a sense of belonging and unity among individuals from all walks of life.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovation</h3>
+                <p>Bringing fresh, creative, and engaging ideas to showcase the richness of South Asian culture.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Collaboration</h3>
+                <p>Partnering with organizations, artists, and communities to deliver meaningful events.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <h2>Meet Our Team</h2>
+        <p>Our passionate team members are the heart of South Asian Events.</p>
+        <div class="team-slider">
+            <button class="slider-btn prev-btn">&#8249;</button>
+            <div class="team-slider-wrapper">
+                <div class="team-member">
+                    <img src="team1.jpg" alt="Team Member 1">
+                    <h3>Jane Doe</h3>
+                    <p>Event Manager</p>
+                </div>
+                <div class="team-member">
+                    <img src="team2.jpg" alt="Team Member 2">
+                    <h3>John Smith</h3>
+                    <p>Marketing Specialist</p>
+                </div>
+                <div class="team-member">
+                    <img src="team3.jpg" alt="Team Member 3">
+                    <h3>Aditi Sharma</h3>
+                    <p>Cultural Advisor</p>
+                </div>
+                <div class="team-member">
+                    <img src="team4.jpg" alt="Team Member 4">
+                    <h3>Raj Patel</h3>
+                    <p>Community Coordinator</p>
+                </div>
+            </div>
+            <button class="slider-btn next-btn">&#8250;</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <p>Email: info@southasianevents.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 South Asian Events. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliderWrapper = document.querySelector('.team-slider-wrapper');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+
+            let currentIndex = 0;
+
+            const scrollSlider = (direction) => {
+                const teamMembers = document.querySelectorAll('.team-member');
+                const memberWidth = teamMembers[0].offsetWidth + 20; // Width + gap
+                const visibleMembers = Math.floor(sliderWrapper.offsetWidth / memberWidth);
+                const maxIndex = teamMembers.length - visibleMembers;
+
+                // Update index based on direction
+                currentIndex = Math.max(0, Math.min(maxIndex, currentIndex + direction));
+                sliderWrapper.style.transform = `translateX(-${currentIndex * memberWidth}px)`;
+            };
+
+            // Event listeners for buttons
+            prevBtn.addEventListener('click', () => scrollSlider(-1));
+            nextBtn.addEventListener('click', () => scrollSlider(1));
+        });
+
+    </script>
+
+</body>
+
+</html>

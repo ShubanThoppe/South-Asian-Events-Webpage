@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Upcoming South Asian Events</title>
+    <link rel="stylesheet" href="events.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header-container">
+        <a href="home.html" class="logo" title="Go to Home">
+            <img src="logo.png" alt="Company Logo">
+            <span>South Asian Events</span>
+        </a>
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Upcoming South Asian Events</h1>
+            <p>Explore music, dance, food, and more in your community!</p>
+            <!-- <a href="home.html" class="cta-button">Back to Home?</a> -->
+        </div>
+        <div class="hero-animation"></div>
+    </section>
+
+    <div class="container">
+        <!-- Filters Section -->
+        <div class="filters" style="margin-bottom: 20px;">
+            <select class="filter-dropdown" onchange="filterEvents(this.value)"
+                style="padding: 10px; border-radius: 5px;">
+                <option value="all">All Event Types</option>
+                <option value="MUSIC">Music</option>
+                <option value="DANCE">Dance</option>
+                <option value="FOOD">Food</option>
+                <option value="WELLNESS">Wellness</option>
+                <option value="FILM">Film</option>
+                <option value="ART">Art</option>
+                <option value="LITERATURE">Literature</option>
+                <option value="FASHION">Fashion</option>
+            </select>
+            <select class="filter-dropdown" onchange="filterEvents(this.value)"
+                style="padding: 10px; border-radius: 5px;">
+                <option value="all">All Months</option>
+                <option value="JAN">January</option>
+                <option value="FEB">February</option>
+                <option value="MAR">March</option>
+                <option value="APR">April</option>
+                <option value="MAY">May</option>
+                <option value="JUN">June</option>
+                <option value="JUL">July</option>
+                <option value="AUG">August</option>
+                <option value="SEP">September</option>
+                <option value="OCT">October</option>
+                <option value="NOV">November</option>
+                <option value="DEC">December</option>
+            </select>
+        </div>
+
+        <div class="container">
+            <div class="grid" id="eventGrid">
+                <!-- Event cards will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- Event Details Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img id="modalImage" src="" alt="Event Image" />
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p><strong>Date:</strong> <span id="modalDate"></span></p>
+                    <p><strong>Type:</strong> <span id="modalType"></span></p>
+                    <p><strong>Details:</strong> <span id="modalDetails"></span></p>
+                    <p><strong>Time:</strong> <span id="modalTime"></span></p>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@southasianevents.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 South Asian Events. All Rights Reserved.
+            </div>
+        </footer>
+
+        <script src="events.js"></script>
+
+</body>
+
+</html>

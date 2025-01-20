@@ -1,0 +1,16 @@
+/* Disable text selection globally */
+* {
+    user-select: none;
+    /* Prevent text selection */
+    cursor: default;
+    /* Default cursor for non-clickable items */
+}
+
+/* Allow text selection only for input and textarea elements */
+input,
+textarea {
+    user-select: text;
+    /* Enable text selection */
+    cursor: text;
+    /* Show the text cursor */
+}
